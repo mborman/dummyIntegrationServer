@@ -1,0 +1,28 @@
+{
+  "name": "dummyIntegrationServer",
+  "version": "0.0.1",
+  "description": "Simple Node server for listening to http requests intended to be sent to third party systems... Logs info to console for each request.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mborman/dummyIntegrationServer"
+  },
+  "keywords": [
+    "dummy",
+    "request",
+    "logger"
+  ],
+  "author": "Mike Borman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mborman/dummyIntegrationServer/issues"
+  },
+  "homepage": "https://github.com/mborman/dummyIntegrationServer",
+  "dependencies": {
+    "body-parser": "^1.12.4",
+    "express": "^4.12.4"
+  }
+}
