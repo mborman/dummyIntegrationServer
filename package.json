@@ -1,7 +1,7 @@
 {
-  "name": "dummy-integration-server",
+  "name": "dummyIntegrationServer",
   "version": "0.0.1",
-  "description": "Simple Node server for listening to http requests intended to be sent to third party systems... Logs info to console for each request.",
+  "description": "Simple Node server for listening to http requests intended to be sent to third party systems... Logs info to console for each request. This was created for a specific purpose. As-is it is probably not very helpful to anyone else. I am open to suggestions or pull requests.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
