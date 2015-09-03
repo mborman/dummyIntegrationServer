@@ -1,5 +1,5 @@
 {
-  "name": "dummyIntegrationServer",
+  "name": "dummy-integration-server",
   "version": "0.0.1",
   "description": "Simple Node server for listening to http requests intended to be sent to third party systems... Logs info to console for each request.",
   "main": "server.js",
