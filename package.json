@@ -1,6 +1,6 @@
 {
   "name": "dummy-integration-server",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple Node server for listening to http requests intended to be sent to third party systems... Logs info to console for each request. This was created for a specific purpose. As-is it is probably not very helpful to anyone else. I am open to suggestions or pull requests.",
   "main": "server.js",
   "scripts": {
