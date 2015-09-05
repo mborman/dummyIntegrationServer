@@ -15,8 +15,9 @@
     "request",
     "logger"
   ],
+  "preferGlobal": true,
   "bin": {
-    "dummy-integration-server": "server.js"
+    "dummy-integration-server": "./server.js"
   },
   "author": "Mike Borman",
   "license": "MIT",
