@@ -15,6 +15,9 @@
     "request",
     "logger"
   ],
+  "bin": {
+    "dummy-integration-server": "server"
+  },
   "author": "Mike Borman",
   "license": "MIT",
   "bugs": {
