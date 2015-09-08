@@ -17,7 +17,7 @@
   ],
   "preferGlobal": true,
   "bin": {
-    "dummy-integration-server": "./server.js"
+    "dummy-integration-server": "./server"
   },
   "author": "Mike Borman",
   "license": "MIT",
