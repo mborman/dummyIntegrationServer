@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-var express = require('express');
+var express = require("express");
 
 // HTTP entity body parser
 
-var bodyParser = require('body-parser');
+var bodyParser = require("body-parser");
 
 var app = express();
 
@@ -36,12 +36,12 @@ app.all('*', function (req, res) {
     headers + "\n- - - Request Body - - -\n" + JSON.stringify(req.body, null, 2);
   
   // send message to client
-  var responseBody = require('./responseBody');
-  var transactionId = req.query.transactionId || 'good';
+  var responseBody = require("./responseBody");
+  var transactionId = req.query.transactionId || "good";
   
-  var body = responseBody[transactionId];
+  var body = responseBody(transactionId);
   
-  if(body.transactionId === 'random'){
+  if(body.transactionId === "random"){
     body.transactionId = (new Date()).getTime();
   }
   
@@ -53,7 +53,7 @@ app.all('*', function (req, res) {
   
   res.set(responseHeaders);
   
-  res.send(body);
+  res.send(JSON.stringify(body));
   
   // log message to console
   console.log("\n*** " + new Date().toString() + " ***\n\n" + out);
@@ -67,6 +67,6 @@ var server = app.listen(8888, function () {
   var host = server.address().address;
   var port = server.address().port;
 
-  console.log('Example app listening at http://%s:%s', host, port);
+  console.log("Example app listening at http://%s:%s", host, port);
   
 });
