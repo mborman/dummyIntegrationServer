@@ -42,7 +42,7 @@ app.all('*', function (req, res) {
   var body = responseBody[transactionId];
   
   if(body.transactionId === 'random'){
-    body.transactionId = (new Date()).getMilliseconds();
+    body.transactionId = (new Date()).getTime();
   }
   
   var responseHeaders = {
