@@ -40,6 +40,11 @@ app.all('*', function (req, res) {
   var transactionId = req.query.transactionId || 'good';
   
   var body = responseBody[transactionId];
+  
+  if(body.transactionId === 'random'){
+    body.transactionId = (new Date()).getMilliseconds();
+  }
+  
   var responseHeaders = {
     "Cache-Control": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
     "Content-Type": "application/json; charset=utf-8",
