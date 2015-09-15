@@ -45,5 +45,5 @@ var responses = {
 
 module.exports = function(responseName){
   
-  return responses[responseName]();
+  return responses[(responseName || "good")]();
 };
