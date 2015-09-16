@@ -11,7 +11,7 @@ var app = express();
 
 // Your own super cool function
 var logger = function(req, res, next) {
-  console.log("GOT REQUEST !");
+  console.log("\n\n*** NEW REQUEST - " + new Date().toString() + " ***\n");
   next(); // Passing the request to the next handler in the stack.
 };
 
@@ -37,13 +37,9 @@ app.all('*', function (req, res) {
   
   // send message to client
   var responseBody = require("./responseBody");
-  var transactionId = req.query.transactionId || "good";
+  var transactionId = req.query.transactionId;
   
   var body = responseBody(transactionId);
-  
-  if(body.transactionId === "random"){
-    body.transactionId = (new Date()).getTime();
-  }
   
   var responseHeaders = {
     "Cache-Control": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
@@ -56,7 +52,7 @@ app.all('*', function (req, res) {
   res.send(JSON.stringify(body));
   
   // log message to console
-  console.log("\n*** " + new Date().toString() + " ***\n\n" + out);
+  console.log(out);
 
 });
 

@@ -11,10 +11,10 @@ var responses = {
     
     return {
       companyId: "ResaleWeekly",
-      itemId: "259853",
+      itemId: "8812758",
       itemUrl: "http:\/\/www.resaleweekly.com\/catalog\/product\/view\/id\/259853",
       mobileItemUrl: "http:\/\/www.resaleweekly.com\/catalog\/product\/view\/id\/259853",
-      transactionId: "random",
+      transactionId: "",
       currencyCode: "GBP",
       description: "IN VERY GOOD WORKING CONDITION NEW DASH MONITOR BEING FITTED NEW TRACK SPADS BEING FITTEDNEW IDLERS BEING FITTED FULLY SERVICED LARGE ROCK BUCKETTRACK CHAINS 80% SPROCKETS 80% NO CRACKS OR WELDING ON BOOM OR DIPPER FIXED FRAME UNDER CARRIAGE MACHINE WHEN WE ARE FINISHED WILL BE AS GOOD AS NEW AND READY FOR WORK ",
       imageUrl: "http:\/\/www.resaleweekly.com\/media\/catalog\/product\/1\/4\/14c146d681087b6_1408116116.jpg",
@@ -31,7 +31,7 @@ var responses = {
       //itemId: "259853",
       itemUrl: "http:\/\/www.resaleweekly.com\/catalog\/product\/view\/id\/259853",
       mobileItemUrl: "http:\/\/www.resaleweekly.com\/catalog\/product\/view\/id\/259853",
-      transactionId: "random",
+      transactionId: "",
       //currencyCode: "GBP",
       description: "IN VERY GOOD WORKING CONDITION NEW DASH MONITOR BEING FITTED NEW TRACK SPADS BEING FITTEDNEW IDLERS BEING FITTED FULLY SERVICED LARGE ROCK BUCKETTRACK CHAINS 80% SPROCKETS 80% NO CRACKS OR WELDING ON BOOM OR DIPPER FIXED FRAME UNDER CARRIAGE MACHINE WHEN WE ARE FINISHED WILL BE AS GOOD AS NEW AND READY FOR WORK ",
       imageUrl: "http:\/\/www.resaleweekly.com\/media\/catalog\/product\/1\/4\/14c146d681087b6_1408116116.jpg",
@@ -43,7 +43,21 @@ var responses = {
   }
 };
 
-module.exports = function(responseName){
+module.exports = function(transactionId){
   
-  return responses[(responseName || "good")]();
+  var response;
+  
+  if(responses[transactionId]) {
+    
+    response = responses[transactionId]();
+    
+  } else {
+    
+    response = responses.good();
+  }
+
+  response.transactionId = (transactionId || (new Date()).getTime());
+  
+  return response;
+  
 };
